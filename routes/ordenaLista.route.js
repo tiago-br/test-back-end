@@ -22,7 +22,7 @@ route.post("/ordenaLista", (request, response) => {
   
     const salaSordenada = copySalaS.sort((a, b) => a.localeCompare(b));
   
-    //response
+    
     response.json({
       listas: {
         salaN: [...salaNordenada],
