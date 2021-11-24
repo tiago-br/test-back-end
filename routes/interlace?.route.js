@@ -20,10 +20,12 @@ const checkInterval = (intervaloA, intervaloB) => {
 
 route.get("/interlace?", (req, res) => {
   
-  const intervaloA = req.query.intervaloA
-  const intervaloB = req.query.intervaloB
+  const intervaloA = req.query.intervaloA.split(',')
+  const numbersIntervaloA = intervaloA.map(e=>Number(e))
+  const intervaloB = req.query.intervaloB.split(',')
+  const numbersIntervaloB = intervaloB.map(e=>Number(e))
 
-  res.json(checkInterval(intervaloA, intervaloB));
+  res.json(checkInterval(numbersIntervaloA, numbersIntervaloB));
 });
 
 
