@@ -18,24 +18,15 @@ const checkInterval = (intervaloA, intervaloB) => {
   }
 }
 
-route.get("/interlace?", (request, response) => {
-  //receber um payload no seguinte formato:
-  // {
-  //   intervaloA: [ 20, 40 ],
-  //   intervaloB: [ 10, 60 ]
-  // }
-  const { intervaloA, intervaloB } = request.body;
+route.get("/interlace?", (req, res) => {
+  
+  const intervaloA = req.query.intervaloA
+  const intervaloB = req.query.intervaloB
 
-  response.json(checkInterval(intervaloA, intervaloB));
+  res.json(checkInterval(intervaloA, intervaloB));
 });
 
-//Acabei fazendo um método POST para esse endpoint como uma opção para a interação 1 B.
-//Por receber um body JSON, acredito que poderíamos tentar o método POST para esse caso.
-route.post("/interlace?", (request, response)=>{
-
-  const {intervaloA, intervaloB} = request.body
-
-  response.json(checkInterval(intervaloA, intervaloB))
-})
 
 module.exports = route;
+
+
