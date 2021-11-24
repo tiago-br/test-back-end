@@ -3,7 +3,7 @@
 
 ## Inicialização
 
-### Após fazer o clone, para iniciar o servidor, que será ouvido na porta local 8080, execute os seguintes comandos no terminal: 
+#### Após fazer o clone, para iniciar o servidor, que será ouvido na porta local 8080, execute os seguintes comandos no terminal: 
 
 
 ### npm
