@@ -29,4 +29,13 @@ route.get("/interlace?", (request, response) => {
   response.json(checkInterval(intervaloA, intervaloB));
 });
 
+//Acabei fazendo um método POST para esse endpoint como uma opção para a interação 1 B.
+//Por receber um body JSON, acredito que poderíamos tentar o método POST para esse caso.
+route.post("interlace?", (request, response)=>{
+
+  const {intervaloA, intervaloB} = request.body
+
+  response.json(checkInterval(intervaloA, intervaloB))
+})
+
 module.exports = route;
